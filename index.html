@@ -630,7 +630,7 @@
                 I'm Prasad Shivram Gangurde — a dynamic Business Development Leader with 5+ years of experience scaling businesses, expanding markets, and forging high-impact partnerships in the EV and clean tech sectors.
             </p>
             <div class="cta-buttons">
-                <a href="#" class="cta-btn primary" onclick="downloadResume()">📄 View Resume</a>
+                <a href="https://mybuddy-codehub.github.io/prasad-portfolio/Prasad_S_Gangurde_Resume.pdf" target="_blank" class="cta-btn primary" download="Prasad_S_Gangurde_Resume.pdf">📄 View Resume</a>
                 <a href="mailto:work.pgangurde@gmail.com" class="cta-btn secondary">📧 Connect with Me</a>
                 <a href="https://www.linkedin.com/in/prasadgangurde" target="_blank" class="cta-btn secondary">🔗 LinkedIn</a>
             </div>
@@ -865,19 +865,33 @@
 
         // Resume download function
         function downloadResume() {
+            // Try to download from GitHub Pages first
+            const resumeUrl = 'https://mybuddy-codehub.github.io/prasad-portfolio/Prasad_S_Gangurde_Resume.pdf';
+            
             // Create a temporary link element
             const link = document.createElement('a');
-            link.href = 'data:application/pdf;base64,'; // This would normally contain the PDF data
+            link.href = resumeUrl;
             link.download = 'Prasad_S_Gangurde_Resume.pdf';
+            link.target = '_blank';
+            
+            // Add to DOM, click, and remove
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
             
-            // Alternative: Open resume in new tab (if you have a hosted PDF)
-            // window.open('path/to/resume.pdf', '_blank');
-            
-            // For demonstration, show an alert
-            alert('Resume download initiated! In a real implementation, this would download the PDF file.');
+            // Fallback: If the PDF doesn't exist, show instruction
+            setTimeout(() => {
+                // Check if download worked by trying to fetch the URL
+                fetch(resumeUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('PDF not found');
+                        }
+                    })
+                    .catch(() => {
+                        alert('Resume PDF not found. Please upload "Prasad_S_Gangurde_Resume.pdf" to your GitHub repository root folder.');
+                    });
+            }, 1000);
         }
 
         // Parallax effect for background
