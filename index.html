@@ -596,12 +596,20 @@
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Fallback: if JS fails or observer doesn't fire, sections still show */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in {
+                opacity: 1;
+                transform: none;
+            }
         }
     </style>
 </head>
@@ -625,7 +633,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Driving Growth. Powering Innovation. Building the Future.</h1>
-            <p class="hero-subtitle">Revenue Head & Business Development Leader</p>
+            <p class="hero-subtitle">Sales Manager – EV Charging Infrastructure | Business Development Leader</p>
             <p class="hero-description">
                 I'm Prasad Shivram Gangurde — a dynamic Business Development Leader with 5+ years of experience scaling businesses, expanding markets, and forging high-impact partnerships in the EV and clean tech sectors.
             </p>
@@ -642,7 +650,7 @@
         <div class="about-content">
             <p>With a career built at the crossroads of business development and emerging technology, I specialize in translating strategic vision into sustainable growth. I've successfully managed complex sales cycles across B2B, B2C, B2G, and B2B2C segments, consistently delivering exceptional results in competitive markets.</p>
             <br>
-            <p>My expertise spans from strategic market penetration and partnership development to regulatory compliance and thought leadership. Currently serving as Revenue Head at Ayka Control Systems, I lead comprehensive revenue generation strategies while leveraging my extensive background in EV charging infrastructure and clean tech sectors.</p>
+            <p>My expertise spans from strategic market penetration and partnership development to regulatory compliance and thought leadership. Currently serving as Sales Manager at SIRI Electromotive, I lead sales and business development for AI-powered EV charging hardware and solutions across India's fast-growing EV infrastructure ecosystem.</p>
             <br>
             <p>I combine strategic thinking, technical acumen, and exceptional relationship management skills to drive 30%+ network growth and establish sustainable competitive advantages. My background in mechanical engineering provides a unique edge in navigating complex technical solutions.</p>
             <br>
@@ -656,14 +664,16 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="company">Ayka Control Systems</div>
-                    <div class="role">Revenue Head</div>
-                    <div class="duration">📍 Mumbai | Sep 2025 – Present</div>
+                    <div class="company">SIRI Electromotive</div>
+                    <div class="role">Sales Manager</div>
+                    <div class="duration">📍 Mumbai | Feb 2026 – Present</div>
                     <ul class="achievements">
-                        <li>Leading comprehensive revenue generation strategies and business development initiatives</li>
-                        <li>Driving market expansion and revenue optimization through data-driven insights</li>
-                        <li>Overseeing sales and business development teams to achieve organizational targets</li>
-                        <li>Identifying and capitalizing on new market opportunities for competitive positioning</li>
+                        <li>Driving B2B sales of SIRINX AC &amp; DC fast charger range (11 kW–360 kW) across fleet operators, CPOs, workplace, and OEM segments</li>
+                        <li>Spearheading market penetration for AI-powered charging hardware and Charging Management System (CMS) with OCPP 1.6J / ISO 15118 compliance</li>
+                        <li>Building and managing a strategic account pipeline across electric bus OEMs, truck OEMs, and large fleet operators under the PM E-DRIVE scheme</li>
+                        <li>Positioning SIRI's SiC-based DCFC differentiation — thermal resilience, ≥95% efficiency, CCS2 &amp; GB/T connector compatibility — against incumbent CPO hardware vendors</li>
+                        <li>Collaborating with product and engineering teams to align the SIRINX-NBD product roadmap with evolving tender requirements (CESL, STU, FAME-III)</li>
+                        <li>Executing go-to-market strategy across Fleets, Retail &amp; Hospitality, Residential, and Energy Storage verticals per SIRI's multi-segment charter</li>
                     </ul>
                 </div>
             </div>
@@ -671,15 +681,16 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="company">Independent Business Consultant</div>
-                    <div class="role">Freelance Consulting</div>
-                    <div class="duration">📍 Mumbai | Feb 2025 – Sep 2025</div>
+                    <div class="company">Independent Business Consultant <span style="font-weight:400; color: var(--text-secondary); font-size:0.95rem;">· incl. Revenue Head, Ayka Control Systems</span></div>
+                    <div class="role">Freelance Consulting &amp; Revenue Leadership</div>
+                    <div class="duration">📍 Mumbai | Feb 2025 – Feb 2026</div>
                     <ul class="achievements">
-                        <li>Provided strategic advisory services to EV charging infrastructure companies</li>
-                        <li>Facilitated Real Estate integration for EV charging projects</li>
-                        <li>Ensured regulatory compliance with Maharashtra State EV Policy</li>
-                        <li>Conducted certified training sessions for RWAs and industry professionals</li>
-                        <li>Delivered certified lecture on EV charging infrastructure</li>
+                        <li>Provided strategic advisory services to EV charging infrastructure companies across Maharashtra</li>
+                        <li>Facilitated Real Estate integration for EV charging projects and ensured regulatory compliance with Maharashtra State EV Policy</li>
+                        <li>Conducted certified training sessions for RWAs and industry professionals; delivered certified lecture on EV charging infrastructure</li>
+                        <li>Concurrently served as Revenue Head at Ayka Control Systems — led end-to-end revenue generation strategy and business development initiatives</li>
+                        <li>Drove market expansion and revenue optimization through data-driven insights; oversaw sales and BD teams to achieve organisational targets</li>
+                        <li>Identified and capitalised on new market opportunities to establish competitive positioning across key industry verticals</li>
                     </ul>
                 </div>
             </div>
@@ -838,3 +849,100 @@
             <div class="education-card">
                 <div class="education-degree">📘 Diploma in Mechanical Engineering</div>
                 <div class="education-institution">Maharashtra State Board of Technical Education (M.S.B.T.E.)</div>
+                <div class="education-duration">2013 - 2016</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact fade-in">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-text">
+                    <strong>Email</strong><br>
+                    <a href="mailto:work.pgangurde@gmail.com">work.pgangurde@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <div class="contact-text">
+                    <strong>Phone</strong><br>
+                    <a href="tel:+918169132670">+91 81691 32670</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">🔗</div>
+                <div class="contact-text">
+                    <strong>LinkedIn</strong><br>
+                    <a href="https://www.linkedin.com/in/prasadgangurde" target="_blank">linkedin.com/in/prasadgangurde</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-text">
+                    <strong>Location</strong><br>
+                    Mumbai, Maharashtra, India
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align:center; padding: 2rem; color: var(--text-secondary); border-top: 1px solid var(--glass-border); font-size: 0.9rem;">
+        © 2025 Prasad Shivram Gangurde · Built with passion for the EV revolution
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // once visible, stop watching
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            // If element is already in viewport on load, make it visible immediately
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add('visible');
+            } else {
+                observer.observe(el);
+            }
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active nav link highlight on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = 'var(--accent-blue)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
